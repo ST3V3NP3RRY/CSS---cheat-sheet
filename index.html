@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CSS3 - cheat sheets: position property</title>
+</head>
+<body>
+    <header>
+        <h1>CSS3 - cheatsheets</h1>
+    </header>
+    <main>
+        <div class="main-container">
+            <section id="top">
+                <h2 class="top-head">The Position Property</h2>
+                <p>The <span class="code">position</span> property specifies the type of positioning method used for an element.</p>
+                <p>There are five different position values:</p>
+                <ul>
+                    <li><a href="#static">static</a></li>
+                    <li><a href="#relative">relative</a></li>
+                    <li><a href="#fixed">fixed</a></li>
+                    <li><a href="#absolute">absolute</a></li>
+                    <li><a href="#sticky">sticky</a></li>
+                </ul>
+                <br>
+                <p>Elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the <span class="code">position</span> property is set first. They also work differently depending on the position value.
+                </p>
+            </section>
+            
+            <!--- position static --->
+            <section id="static" class="position-container">
+                <h2 class="section-head static">position: static;</h2>
+                <p>HTML elements are positioned static by default.</p>
+                <p>An element with <span class="code">position: static;</span> is not positioned in any special way; it is always positioned according to the normal flow of the page:</p>
+            </section>
+            
+            <!--- postion relative --->
+            <section id="relative" class="position-container relative" >
+                <h2 class="section-head static">position: relative;</h2>
+                <p>An element with <span class="code">position: relative;</span> is positioned relative to its normal position.</p>
+                <br>
+                <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.</p>
+                <br>
+                <div class="relative-box-container">
+                    <div class="relative-box">
+                        <p>Normal position</p>
+                    </div>    
+                </div>
+                <p class="to-front">Box relatively positioned 20px from top and 60px from the left.</p>
+            </section>
+            
+            <!--- position fixed --->
+            <section id="fixed" class="position-container">
+                <h2 class="section-head static">position: fixed;</h2>
+                <p>An element with <span class="code">position: fixed;</span> is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.</p>
+                <br>
+                <p>A fixed element does not leave a gap in the page where it would normally have been located.</p>
+                <br>
+                <p>The header section at the top of this page has the <span class="code">position: fixed;</span> property set on it.</p>
+            </section>
+            <!--- position absolute --->
+            <section id="absolute" class="position-container">
+                <h2 class="section-head static">position: absolute;</h2>
+                <p>An element with <span class="code">position: absolute;</span> is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).</p>
+                <br>
+                <p>However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.</p>
+                <br>
+                <p><span class="note">Note:</span> Absolute positioned elements are removed from the normal flow, and can overlap elements.</p>
+            </section>
+            <!--- position sticky --->
+            <section id="sticky" class="position-container sticky">
+                <h2 class="section-head static">position: sticky;</h2>
+                <p>An element with <span class="code">position: sticky;</span> is positioned based on the user's scroll position.</p>
+                <br>
+                <p>A sticky element toggles between <span class="code">relative</span> and <span class="code">fixed</span>, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).</p>
+                <br>
+                <p><span class="note">Note:</span> Internet Explorer does not support sticky positioning. Safari requires a -webkit- prefix (see example below). You must also specify at least one of <span class="code">top</span>, <span class="code">right</span>, <span class="code">bottom</span> or <span class="code">left</span> for sticky positioning to work.</p>
+            </section>
+        </div> <!-- main-container-->
+    </main>
+    <footer><p><span class="disclaimer">DISCLAIMER: </span>This site borrows heavily from <a href="https://www.w3schools.com/css/css_positioning.asp">w3schools.com</a> position article.</p></footer> 
+</body>
+</html>
